@@ -9,7 +9,8 @@ PGraphics offscreen;
 
 void setup() {
 
-  size(800, 600, P3D);
+  //size(800, 600, P3D);
+  fullScreen(P3D);
   ks = new Keystone(this);
   surface  = ks.createCornerPinSurface(400, 300, 5);
  
@@ -21,6 +22,7 @@ void draw() {
   offscreen.beginDraw();
     offscreen.background(255,0,255);
     offscreen.rect(10,10,40,50);
+    offscreen.ellipse(20,20,500,500);
   offscreen.endDraw();
   surface.render(offscreen);
 }

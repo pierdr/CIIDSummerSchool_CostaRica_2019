@@ -1,21 +1,35 @@
 //LOOPS
+int numOfRect = 50;
+
 void setup()
 {
   size(450,450);
-  stroke(255,0,0);
 }
+
 void draw()
 {
   background(0,0,0);
   stroke(0,0,0);
   
-  for(int i=0;i<50;i++)
+  for(int i=0; i<numOfRect; i++)
   {
-    fill(0,0,map(i,0,50,0,255));
-    rect(i*5,i*5,i*3,i*3);
+    fill(0,0,255);
+    
+    rect(i*5,i*5,100,100);
   }
-  stroke(0,0,255);
-  fill(255,0,0);
-  ellipse(275,275,20,20);
-  ellipse(365,365,20,20);
+  
+}
+
+void keyPressed()
+{
+  
+  
+  if(keyCode == 37)
+  {
+    numOfRect = numOfRect -1;
+  }
+  else if(keyCode == 39)
+  {
+    numOfRect = numOfRect +1;
+  }
 }
